@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユタ - 個人ポートフォリオ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">ユタ</h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link">プロフィール</a></li>
+                    <li><a href="#hobbies" class="nav-link">趣味</a></li>
+                    <li><a href="#contact" class="nav-link">コンタクト</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">ようこそ</h2>
+                    <p class="hero-text">ユタの個人ポートフォリオへようこそ。<br>私の作品や趣味をご覧ください。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">プロフィール</h2>
+                <div class="about-content">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <div class="avatar">😊</div>
+                        </div>
+                        <div class="profile-text">
+                            <h3>ユタ</h3>
+                            <p>個人開発者として活動しています。<br>
+                            フロントエンドの技術を学習中です。<br>
+                            美しいUIとUXの創造に情熱を注いでいます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hobbies" class="hobbies">
+            <div class="container">
+                <h2 class="section-title">趣味と関心事</h2>
+                <div class="hobbies-grid">
+                    <div class="hobby-card">
+                        <div class="hobby-icon">💻</div>
+                        <h3>プログラミング</h3>
+                        <p>新しい技術の習得に励んでいます</p>
+                    </div>
+                    <div class="hobby-card">
+                        <div class="hobby-icon">📚</div>
+                        <h3>読書</h3>
+                        <p>小説から技術書まで幅広く読んでいます</p>
+                    </div>
+                    <div class="hobby-card">
+                        <div class="hobby-icon">📸</div>
+                        <h3>写真</h3>
+                        <p>日常の美しい瞬間を切り取っています</p>
+                    </div>
+                    <div class="hobby-card">
+                        <div class="hobby-icon">🎵</div>
+                        <h3>音楽</h3>
+                        <p>様々なジャンルの音楽を聴いています</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">コンタクト</h2>
+                <div class="contact-content">
+                    <p class="contact-text">ご質問やご相談がございましたら、<br>お気軽にご連絡ください。</p>
+                    <div class="contact-info">
+                        <p>📧 yuta@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ユタ. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
