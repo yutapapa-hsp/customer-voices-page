@@ -19,6 +19,13 @@ class PomodoroTimer {
             currentStreak: 0
         };
         
+        // レベルシステム
+        this.levelSystem = {
+            currentLevel: 1,
+            currentXP: 0,
+            totalXP: 0
+        };
+        
         // DOM要素
         this.timerDisplay = document.getElementById('timerDisplay') || document.querySelector('.timer-display');
         this.timerLabel = document.querySelector('.timer-label');
@@ -47,15 +54,24 @@ class PomodoroTimer {
         // 背景アニメーション
         this.backgroundAnimation = document.getElementById('backgroundAnimation');
         
+        // レベル表示要素
+        this.levelNumber = document.getElementById('levelNumber');
+        this.levelTitle = document.getElementById('levelTitle');
+        this.currentXPEl = document.getElementById('currentXP');
+        this.nextLevelXPEl = document.getElementById('nextLevelXP');
+        this.xpProgress = document.getElementById('xpProgress');
+        
         this.init();
     }
     
     init() {
         this.bindEvents();
         this.loadStats();
+        this.loadLevelData();
         this.updateDisplay();
         this.updateProgressCircle();
         this.updatePetMessage();
+        this.updateLevelDisplay();
         this.createBackgroundParticles();
     }
     
@@ -169,6 +185,22 @@ class PomodoroTimer {
             this.stats.completedSessions++;
             this.stats.totalFocusTime += this.workDuration;
             this.stats.currentStreak++;
+            
+            // XP獲得
+            let xpGained = 50; // 基本XP
+            
+            // ボーナスXP計算
+            if (this.stats.currentStreak >= 5) {
+                xpGained += 20; // 連続ボーナス
+            }
+            if (this.sessionCount % 4 === 0) {
+                xpGained += 30; // 4セッション完了ボーナス
+            }
+            if (this.workDuration >= 45) {
+                xpGained += 25; // 長時間集中ボーナス
+            }
+            
+            this.addXP(xpGained);
             
             // 4回目のポモドーロ後は長い休憩
             if (this.sessionCount % 4 === 0) {
@@ -419,6 +451,182 @@ class PomodoroTimer {
             console.log('Audio playback not supported');
         }
     }
+    
+    // === レベルシステムメソッド ===
+    
+    getXPForNextLevel(level) {
+        // レベルアップに必要なXPを計算（指数的に増加）
+        return Math.floor(100 * Math.pow(1.5, level - 1));
+    }
+    
+    getLevelTitles() {
+        return [
+            '初心者', '見習い', '集中者', '努力家', '継続者',
+            '達成者', '専門家', '熟練者', 'マスター', '伝説',
+            '超越者', '賢者', '聖人', '不死鳥', '神話',
+            '創造者', '無限者', '永遠', '宇宙', '全知全能'
+        ];
+    }
+    
+    addXP(amount) {
+        this.levelSystem.currentXP += amount;
+        this.levelSystem.totalXP += amount;
+        
+        const nextLevelXP = this.getXPForNextLevel(this.levelSystem.currentLevel);
+        
+        // レベルアップチェック
+        if (this.levelSystem.currentXP >= nextLevelXP) {
+            this.levelUp();
+        } else {
+            this.updateLevelDisplay();
+            this.animateXPGain(amount);
+        }
+        
+        this.saveLevelData();
+    }
+    
+    levelUp() {
+        this.levelSystem.currentXP -= this.getXPForNextLevel(this.levelSystem.currentLevel);
+        this.levelSystem.currentLevel++;
+        
+        this.updateLevelDisplay();
+        this.showLevelUpNotification();
+        this.playLevelUpSound();
+        this.createLevelUpParticles();
+        
+        // ペットにもレベルアップを知らせる
+        this.updatePetMessage(`おめでとう！レベル${this.levelSystem.currentLevel}になったよ！🎉`);
+        
+        // 連続レベルアップのチェック
+        const nextLevelXP = this.getXPForNextLevel(this.levelSystem.currentLevel);
+        if (this.levelSystem.currentXP >= nextLevelXP) {
+            setTimeout(() => {
+                this.levelUp();
+            }, 2000);
+        }
+        
+        this.saveLevelData();
+    }
+    
+    updateLevelDisplay() {
+        const nextLevelXP = this.getXPForNextLevel(this.levelSystem.currentLevel);
+        const progress = (this.levelSystem.currentXP / nextLevelXP) * 100;
+        const titles = this.getLevelTitles();
+        
+        this.levelNumber.textContent = this.levelSystem.currentLevel;
+        this.levelTitle.textContent = titles[Math.min(this.levelSystem.currentLevel - 1, titles.length - 1)];
+        this.currentXPEl.textContent = this.levelSystem.currentXP;
+        this.nextLevelXPEl.textContent = nextLevelXP;
+        this.xpProgress.style.width = `${progress}%`;
+    }
+    
+    showLevelUpNotification() {
+        const notification = document.createElement('div');
+        notification.className = 'level-up-notification';
+        notification.innerHTML = `
+            🌟 レベルアップ！ 🌟<br>
+            <strong>Lv.${this.levelSystem.currentLevel}</strong><br>
+            ${this.getLevelTitles()[Math.min(this.levelSystem.currentLevel - 1, this.getLevelTitles().length - 1)]}
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 3000);
+    }
+    
+    animateXPGain(amount) {
+        // XP獲得アニメーション
+        const xpGain = document.createElement('div');
+        xpGain.textContent = `+${amount} XP`;
+        xpGain.style.cssText = `
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffb3d1;
+            font-size: 1.2rem;
+            font-weight: 600;
+            pointer-events: none;
+            z-index: 1000;
+            animation: xpGainFloat 2s ease-out forwards;
+        `;
+        
+        document.body.appendChild(xpGain);
+        
+        setTimeout(() => {
+            if (xpGain.parentNode) {
+                xpGain.parentNode.removeChild(xpGain);
+            }
+        }, 2000);
+    }
+    
+    createLevelUpParticles() {
+        for (let i = 0; i < 20; i++) {
+            setTimeout(() => {
+                const particle = document.createElement('div');
+                particle.textContent = '⭐';
+                particle.style.cssText = `
+                    position: fixed;
+                    left: 50%;
+                    top: 50%;
+                    font-size: ${Math.random() * 20 + 20}px;
+                    pointer-events: none;
+                    animation: levelUpParticle 3s ease-out forwards;
+                    z-index: 1000;
+                `;
+                
+                document.body.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 3000);
+            }, i * 50);
+        }
+    }
+    
+    playLevelUpSound() {
+        // レベルアップ音の再生
+        try {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            // 上昇する音階
+            oscillator.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5
+            oscillator.frequency.setValueAtTime(659.25, audioContext.currentTime + 0.2); // E5
+            oscillator.frequency.setValueAtTime(783.99, audioContext.currentTime + 0.4); // G5
+            oscillator.frequency.setValueAtTime(1046.50, audioContext.currentTime + 0.6); // C6
+            
+            gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.1);
+            gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 1.0);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 1.0);
+        } catch (error) {
+            console.log('Audio playback not supported');
+        }
+    }
+    
+    saveLevelData() {
+        localStorage.setItem('pomodoroLevelSystem', JSON.stringify(this.levelSystem));
+    }
+    
+    loadLevelData() {
+        const saved = localStorage.getItem('pomodoroLevelSystem');
+        if (saved) {
+            this.levelSystem = { ...this.levelSystem, ...JSON.parse(saved) };
+        }
+    }
 }
 
 // CSSアニメーションの定義を動的に追加
@@ -451,6 +659,28 @@ style.textContent = `
     @keyframes pulse {
         0%, 100% { transform: scale(1); }
         50% { transform: scale(1.1); }
+    }
+    
+    @keyframes xpGainFloat {
+        0% {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(-50%) translateY(-50px);
+        }
+    }
+    
+    @keyframes levelUpParticle {
+        0% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -50%) translate(${Math.random() * 300 - 150}px, ${Math.random() * 300 - 150}px) scale(0.3) rotate(720deg);
+        }
     }
 `;
 document.head.appendChild(style);
