@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#x7652;&#x3057;&#x7CFB;&#x30DD;&#x30E2;&#x30C9;&#x30FC;&#x30ED;&#x30BF;&#x30A4;&#x30DE;&#x30FC;</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffb3d1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="&#x7652;&#x3057;&#x30DD;&#x30E2;&#x30C9;&#x30FC;&#x30ED;">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="app-title">&#x1F338; &#x7652;&#x3057;&#x7CFB;&#x30DD;&#x30E2;&#x30C9;&#x30FC;&#x30ED;&#x30BF;&#x30A4;&#x30DE;&#x30FC; &#x1F338;</h1>
+            <p class="app-subtitle">&#x3084;&#x3055;&#x3057;&#x3044;&#x6642;&#x9593;&#x3092;&#x4E00;&#x7DD2;&#x306B;&#x904E;&#x3054;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;</p>
+        </header>
+
+        <main class="main-content">
+            <!-- &#x30BF;&#x30A4;&#x30DE;&#x30FC;&#x8868;&#x793A;&#x90E8;&#x5206; -->
+            <div class="timer-section">
+                <div class="timer-circle">
+                    <svg class="progress-ring" width="250" height="250">
+                        <circle class="progress-ring-circle-bg" cx="125" cy="125" r="110"></circle>
+                        <circle class="progress-ring-circle" cx="125" cy="125" r="110"></circle>
+                    </svg>
+                    <div class="timer-content">
+                        <div class="timer-display">25:00</div>
+                        <div class="timer-label">&#x4F5C;&#x696D;&#x6642;&#x9593;</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- &#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30EB;&#x30DC;&#x30BF;&#x30F3; -->
+            <div class="controls">
+                <button class="btn btn-start" id="startBtn">
+                    <span class="btn-icon">&#x25B6;&#xFE0F;</span>
+                    &#x30B9;&#x30BF;&#x30FC;&#x30C8;
+                </button>
+                <button class="btn btn-pause" id="pauseBtn" disabled>
+                    <span class="btn-icon">&#x23F8;&#xFE0F;</span>
+                    &#x4E00;&#x6642;&#x505C;&#x6B62;
+                </button>
+                <button class="btn btn-reset" id="resetBtn">
+                    <span class="btn-icon">&#x1F504;</span>
+                    &#x30EA;&#x30BB;&#x30C3;&#x30C8;
+                </button>
+            </div>
+
+            <!-- &#x30BF;&#x30A4;&#x30DE;&#x30FC;&#x8A2D;&#x5B9A; -->
+            <div class="timer-settings">
+                <div class="setting-group">
+                    <label for="workDuration">&#x4F5C;&#x696D;&#x6642;&#x9593; (&#x5206;)</label>
+                    <input type="range" id="workDuration" min="1" max="60" value="25" class="slider">
+                    <span class="setting-value" id="workValue">25</span>
+                </div>
+                <div class="setting-group">
+                    <label for="shortBreak">&#x77ED;&#x3044;&#x4F11;&#x61A9; (&#x5206;)</label>
+                    <input type="range" id="shortBreak" min="1" max="30" value="5" class="slider">
+                    <span class="setting-value" id="shortValue">5</span>
+                </div>
+                <div class="setting-group">
+                    <label for="longBreak">&#x9577;&#x3044;&#x4F11;&#x61A9; (&#x5206;)</label>
+                    <input type="range" id="longBreak" min="5" max="60" value="15" class="slider">
+                    <span class="setting-value" id="longValue">15</span>
+                </div>
+            </div>
+
+            <!-- &#x30D0;&#x30FC;&#x30C1;&#x30E3;&#x30EB;&#x30DA;&#x30C3;&#x30C8; -->
+            <div class="pet-section">
+                <div class="pet-container">
+                    <div class="pet-avatar" id="petAvatar">&#x1F431;</div>
+                    <div class="pet-name">&#x3061;&#x3073;</div>
+                    <div class="pet-message" id="petMessage">&#x4ECA;&#x65E5;&#x3082;&#x4E00;&#x7DD2;&#x306B;&#x9811;&#x5F35;&#x308A;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF01;</div>
+                </div>
+            </div>
+
+            <!-- &#x7D71;&#x8A08;&#x8868;&#x793A; -->
+            <div class="stats-section">
+                <h3 class="stats-title">&#x1F4CA; &#x4ECA;&#x65E5;&#x306E;&#x7D71;&#x8A08;</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="completedSessions">0</div>
+                        <div class="stat-label">&#x5B8C;&#x4E86;&#x30BB;&#x30C3;&#x30B7;&#x30E7;&#x30F3;</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalFocusTime">0</div>
+                        <div class="stat-label">&#x96C6;&#x4E2D;&#x6642;&#x9593; (&#x5206;)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="currentStreak">0</div>
+                        <div class="stat-label">&#x9023;&#x7D9A;&#x30BB;&#x30C3;&#x30B7;&#x30E7;&#x30F3;</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- &#x80CC;&#x666F;&#x30A2;&#x30CB;&#x30E1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x7528; -->
+        <div class="background-animation" id="backgroundAnimation"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

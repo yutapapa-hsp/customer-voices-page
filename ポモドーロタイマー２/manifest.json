@@ -1,0 +1,48 @@
+{
+  "name": "癒し系ポモドーロタイマー",
+  "short_name": "癒しポモドーロ",
+  "description": "やさしく癒される雰囲気で、少し面白い要素も含んだポモドーロタイマーアプリケーション",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fef7ff",
+  "theme_color": "#ffb3d1",
+  "orientation": "portrait-primary",
+  "scope": "./",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "lifestyle", "wellness"],
+  "screenshots": [
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "375x667",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "features": [
+    "cross-platform",
+    "offline-support",
+    "timer",
+    "statistics",
+    "customizable"
+  ]
+}

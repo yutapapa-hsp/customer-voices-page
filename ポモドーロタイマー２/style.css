@@ -1,0 +1,518 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* 癒し系カラーパレット */
+    --primary-pink: #ffb3d1;
+    --primary-lavender: #d4b3ff;
+    --primary-mint: #b3ffcc;
+    --primary-peach: #ffccb3;
+    --primary-sky: #b3e5ff;
+    
+    --soft-white: #fefefe;
+    --warm-gray: #f5f3f0;
+    --gentle-gray: #e8e6e3;
+    --text-primary: #5a5248;
+    --text-secondary: #8b7d6b;
+    
+    --shadow-soft: 0 8px 32px rgba(91, 82, 72, 0.1);
+    --shadow-gentle: 0 4px 16px rgba(91, 82, 72, 0.08);
+    --shadow-subtle: 0 2px 8px rgba(91, 82, 72, 0.06);
+}
+
+body {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, 
+        #fef7ff 0%, 
+        #f0f8ff 25%, 
+        #f7fff0 50%, 
+        #fff7f0 75%, 
+        #fef7ff 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 50% 100%; }
+    75% { background-position: 50% 0%; }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ヘッダー */
+.header {
+    text-align: center;
+    padding: 40px 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.app-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    letter-spacing: 2px;
+}
+
+.app-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* メインコンテンツ */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 30px;
+    align-items: start;
+}
+
+/* タイマーセクション */
+.timer-section {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 40px;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.timer-circle {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.progress-ring-circle-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.3);
+    stroke-width: 8;
+}
+
+.progress-ring-circle {
+    fill: none;
+    stroke: var(--primary-pink);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 691.15;
+    stroke-dashoffset: 691.15;
+    transition: stroke-dashoffset 1s linear;
+    filter: drop-shadow(0 0 10px rgba(255, 179, 209, 0.5));
+}
+
+.timer-content {
+    position: absolute;
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-label {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* コントロールボタン */
+.controls {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: var(--shadow-gentle);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.btn-start {
+    background: linear-gradient(135deg, var(--primary-mint), var(--primary-sky));
+    color: var(--text-primary);
+}
+
+.btn-pause {
+    background: linear-gradient(135deg, var(--primary-peach), var(--primary-pink));
+    color: var(--text-primary);
+}
+
+.btn-reset {
+    background: linear-gradient(135deg, var(--primary-lavender), var(--primary-pink));
+    color: var(--text-primary);
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+/* タイマー設定 */
+.timer-settings {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.setting-group {
+    margin-bottom: 20px;
+}
+
+.setting-group:last-child {
+    margin-bottom: 0;
+}
+
+.setting-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--primary-pink), var(--primary-lavender));
+    outline: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--soft-white);
+    cursor: pointer;
+    box-shadow: var(--shadow-gentle);
+    border: 2px solid var(--primary-pink);
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--soft-white);
+    cursor: pointer;
+    box-shadow: var(--shadow-gentle);
+    border: 2px solid var(--primary-pink);
+}
+
+.setting-value {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: 500;
+    color: var(--text-primary);
+    min-width: 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+/* ペットセクション */
+.pet-section {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.pet-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.pet-avatar {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-mint), var(--primary-sky));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-gentle);
+    animation: petBreathe 3s ease-in-out infinite;
+}
+
+@keyframes petBreathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.pet-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.pet-message {
+    flex: 1;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.6);
+    padding: 15px 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.pet-message::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid rgba(255, 255, 255, 0.6);
+}
+
+/* 統計セクション */
+.stats-section {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.stats-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+/* 背景アニメーション */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .main-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        gap: 20px;
+    }
+    
+    .timer-section {
+        grid-column: 1;
+        grid-row: 1;
+        padding: 30px 20px;
+    }
+    
+    .timer-circle {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .timer-display {
+        font-size: 2rem;
+    }
+    
+    .controls {
+        grid-column: 1;
+        grid-row: 2;
+        padding: 20px;
+    }
+    
+    .timer-settings {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 20px;
+    }
+    
+    .pet-section {
+        grid-column: 1;
+        grid-row: 4;
+        padding: 20px;
+    }
+    
+    .pet-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .pet-message::before {
+        display: none;
+    }
+    
+    .stats-section {
+        grid-column: 1;
+        grid-row: 5;
+        padding: 20px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .app-title {
+        font-size: 2rem;
+    }
+    
+    .header {
+        padding: 30px 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 1.8rem;
+    }
+    
+    .timer-circle {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .timer-display {
+        font-size: 1.8rem;
+    }
+}
