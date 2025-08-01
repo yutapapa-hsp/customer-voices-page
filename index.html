@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ことばの贈りもの 〜お客様の声〜</title>
+    <meta name="description" content="「心のおまもりボイス」をお聴きくださった方から届いたご感想を紹介しています。一つひとつの言葉が、また誰かのおまもりになりますように。">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="ことばの贈りもの 〜お客様の声〜">
+    <meta property="og:description" content="「心のおまもりボイス」をお聴きくださった方から届いたご感想を紹介しています。一つひとつの言葉が、また誰かのおまもりになりますように。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="心のおまもりボイス">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card設定 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ことばの贈りもの 〜お客様の声〜">
+    <meta name="twitter:description" content="「心のおまもりボイス」をお聴きくださった方から届いたご感想を紹介しています。一つひとつの言葉が、また誰かのおまもりになりますように。">
+    <meta name="twitter:image" content="">
+    
+    <!-- ファビコン -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(248, 218, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(200, 230, 201, 0.3) 0%, transparent 50%),
+                linear-gradient(135deg, #faf9f7 0%, #f4f6f4 30%, #f1f3f1 70%, #f7f5f2 100%);
+            color: #3d4f3d;
+            line-height: 1.8;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ヘッダー */
+        .header {
+            text-align: center;
+            padding: 60px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(200, 230, 201, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(248, 218, 198, 0.1) 0%, transparent 50%);
+            animation: headerFloat 20s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes headerFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            background: 
+                linear-gradient(135deg, 
+                    #4a5d4a 0%, 
+                    #6b7d6b 25%, 
+                    #8ab68a 50%, 
+                    #a8c3a8 75%, 
+                    #7a9b7a 100%);
+            background-size: 200% 200%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            position: relative;
+            text-shadow: 0 4px 20px rgba(107, 125, 107, 0.2);
+            animation: 
+                fadeInUp 1s ease-out,
+                gradientShift 8s ease-in-out infinite;
+        }
+
+        .main-title::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(107, 125, 107, 0.1), rgba(138, 182, 138, 0.1));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: blur(3px);
+            z-index: -1;
+        }
+
+        .main-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #8ab68a, #a8c3a8, #8ab68a, transparent);
+            border-radius: 2px;
+            animation: titleUnderline 2s ease-out 1s both;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes titleUnderline {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: 120px;
+                opacity: 1;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #7a9b7a;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .subtitle::before,
+        .subtitle::after {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a8c3a8;
+            font-size: 1rem;
+            opacity: 0.7;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        .subtitle::before {
+            left: -40px;
+            animation-delay: 0s;
+        }
+
+        .subtitle::after {
+            right: -40px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { 
+                opacity: 0.3;
+                transform: translateY(-50%) scale(0.8);
+            }
+            50% { 
+                opacity: 1;
+                transform: translateY(-50%) scale(1.2);
+            }
+        }
+
+        /* 冒頭メッセージ */
+        .intro-message {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 255, 248, 0.8) 100%);
+            padding: 40px;
+            border-radius: 30px;
+            margin-bottom: 60px;
+            text-align: center;
+            box-shadow: 
+                0 8px 32px rgba(107, 125, 107, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(200, 230, 201, 0.3);
+            position: relative;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .intro-message::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8ab68a, transparent);
+            border-radius: 2px;
+        }
+
+        .intro-message p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #5a6d5a;
+            line-height: 2;
+        }
+
+        /* お客様の声セクション */
+        .voices-section {
+            margin-bottom: 60px;
+        }
+
+        .voices-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .voice-card {
+            background: 
+                linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(251, 253, 251, 0.9) 100%);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 
+                0 10px 30px rgba(107, 125, 107, 0.1),
+                0 1px 0 rgba(255, 255, 255, 0.8) inset,
+                0 -1px 0 rgba(200, 230, 201, 0.2) inset;
+            border: 1px solid rgba(200, 230, 201, 0.3);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .voice-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .voice-card:hover::after {
+            left: 100%;
+        }
+
+        .voice-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(107, 125, 107, 0.15),
+                0 1px 0 rgba(255, 255, 255, 0.9) inset;
+        }
+
+        .voice-card::before {
+            content: '🌿';
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-size: 1.8rem;
+            opacity: 0.6;
+            filter: drop-shadow(0 2px 4px rgba(107, 125, 107, 0.2));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .customer-name {
+            font-size: 0.9rem;
+            color: #8a9d8a;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .voice-title {
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, #5a6d5a 0%, #7a9b7a 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .voice-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(90deg, #8ab68a, transparent);
+            border-radius: 1px;
+        }
+
+        .voice-content {
+            font-size: 1rem;
+            color: #5a6d5a;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        .voice-preview {
+            display: block;
+        }
+
+        .voice-full {
+            display: none;
+        }
+
+        .read-more-btn {
+            background: linear-gradient(135deg, #8ab68a, #7a9b7a);
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(138, 182, 138, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .read-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(138, 182, 138, 0.4);
+            background: linear-gradient(135deg, #7a9b7a, #6a8b6a);
+        }
+
+        /* フッター */
+        .footer {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 255, 248, 0.9) 100%);
+            padding: 50px 40px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 
+                0 10px 30px rgba(107, 125, 107, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(200, 230, 201, 0.3);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8ab68a, transparent);
+            border-radius: 2px;
+        }
+
+        .footer-message {
+            font-size: 1.1rem;
+            color: #6b7d6b;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            background: linear-gradient(135deg, #8ab68a, #7a9b7a);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 6px 20px rgba(138, 182, 138, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .footer-link:hover::before {
+            left: 100%;
+        }
+
+        .footer-link:hover {
+            background: linear-gradient(135deg, #7a9b7a, #6a8b6a);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(138, 182, 138, 0.4);
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 40px 0 60px;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .main-title::after {
+                width: 80px;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .subtitle::before,
+            .subtitle::after {
+                display: none;
+            }
+
+            .intro-message {
+                padding: 25px 20px;
+            }
+
+            .voice-card {
+                padding: 25px 20px;
+            }
+
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .footer-link {
+                width: 200px;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .voices-grid {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+        }
+
+        /* アニメーション */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+            }
+            50% { 
+                transform: translateY(-5px) rotate(5deg); 
+            }
+        }
+
+        .voice-card {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .voice-card:nth-child(1) { animation-delay: 0.1s; }
+        .voice-card:nth-child(2) { animation-delay: 0.2s; }
+        .voice-card:nth-child(3) { animation-delay: 0.3s; }
+        .voice-card:nth-child(4) { animation-delay: 0.4s; }
+        .voice-card:nth-child(5) { animation-delay: 0.5s; }
+        .voice-card:nth-child(6) { animation-delay: 0.6s; }
+        .voice-card:nth-child(7) { animation-delay: 0.7s; }
+
+        /* スクロール時のパララックス効果 */
+        @media (prefers-reduced-motion: no-preference) {
+            .intro-message,
+            .voice-card,
+            .footer {
+                transform: translateY(20px);
+                opacity: 0;
+                animation: fadeInUp 1s ease-out forwards;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1 class="main-title" data-text="ことばの贈りもの">ことばの贈りもの</h1>
+            <p class="subtitle">〜お客様の声〜</p>
+        </header>
+
+        <!-- 冒頭メッセージ -->
+        <div class="intro-message">
+            <p>
+                このページでは、「心のおまもりボイス」をお申し込みいただき、<br>
+                実際にお聴きくださった方から届いたご感想を紹介しています。<br>
+                一つひとつの言葉が、また誰かのおまもりになりますように。
+            </p>
+        </div>
+
+        <!-- お客様の声セクション -->
+        <section class="voices-section">
+            <div class="voices-grid">
+                <!-- お客様の声1 -->
+                <div class="voice-card">
+                    <div class="customer-name">Mさん</div>
+                    <h3 class="voice-title">「1人じゃないと気づけました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            「大丈夫」という言葉にはいろいろな意味があるってことを再認識しました。<br>
+                            自分の感情を表に出すのが怖かったのですが、ゆうたさんに「大丈夫」と言われると<br>
+                            本当に1人じゃないんだ、私のことを考えてくれる人がいるんだと光が見えた気がしました。
+                        </div>
+                        <div class="voice-full">
+                            ボイスレターありがとうございました。何度も聞いて思ったことをお伝えします。<br><br>
+                            「大丈夫」という言葉にはいろいろな意味があるってことを再認識しました。自分の感情を表に出すのが怖かったのですが、ゆうたさんに「大丈夫」と言われると本当に1人じゃないんだ、私のことを考えてくれる人がいるんだと光が見えた気がしました。<br><br>
+                            弱さを出すのも個性なんだって思えました。一生懸命に生きていることの証と言われてすっと気持ちが軽くなりました。自分が生きていていいんだって。<br><br>
+                            誰かに寄り添ってもらえることってこんなにも嬉しいことなんだなって。自分のペースで自分の気持ちに寄り添っていこうと思えました。<br><br>
+                            支離滅裂になってしまっていますが、思っていることを書き出したら涙が出ました。お願いしてよかったです。ありがとうございます。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声2 -->
+                <div class="voice-card">
+                    <div class="customer-name">Yさん</div>
+                    <h3 class="voice-title">「自分にお疲れ様と言えました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            とても優しいお言葉をくださって涙が出ました。<br>
+                            何にもできない自分で良い、大丈夫、自分にお疲れ様と思ったことも、<br>
+                            言ってあげたこともありませんでした。
+                        </div>
+                        <div class="voice-full">
+                            ゆうたさんへ<br>
+                            心のお守りボイスをありがとうございました。早速聞いてみました。とても優しいお言葉をくださって涙が出ました。<br><br>
+                            何にもできない自分で良い、大丈夫、自分にお疲れ様と思ったことも、言ってあげたこともありませんでした。（やはり怠け者の私ダメ）と思いながら、声に出して何もできなくても大丈夫、お疲れ様、今までよく頑張ってきたねと言ってみたら涙がたくさん出てきました。<br><br>
+                            自然にお疲れ様、頑張ってると自分に言えるように続けていきます。ありがとうございました。私はすぐに自分を責めてしまう癖があるので復帰したときは休憩中にも聞きたいです。<br><br>
+                            特別な声をいただきまして大変ありがとうございました。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声3 -->
+                <div class="voice-card">
+                    <div class="customer-name">Rさん</div>
+                    <h3 class="voice-title">「優しい声が心にジーンと響きました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            作って下さった音源を聞いて、少し涙が出てきました。<br>
+                            優しい声が心にジーンと響きました。<br>
+                            何でも完璧にやらないといけない、周りと合わせなきゃいけないという気持ちは、なかなか消えないものですね。
+                        </div>
+                        <div class="voice-full">
+                            作って下さった音源を聞いて、少し涙が出てきました。優しい声が心にジーンと響きました。<br><br>
+                            何でも完璧にやらないといけない、周りと合わせなきゃいけないという気持ちは、なかなか消えないものですね。<br><br>
+                            音声を作って下さり、本当にありがとうございました。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声4 -->
+                <div class="voice-card">
+                    <div class="customer-name">Yさん</div>
+                    <h3 class="voice-title">「自分を大事にできたらいいな」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            ゆうたさんの優しい声と共に。いつしか不安にも追い込まれて押しつぶされそうになって、<br>
+                            自分を駄目だしばかりするようになって。自信が持てなくなりました。<br>
+                            自分に優しくできなくて。
+                        </div>
+                        <div class="voice-full">
+                            心のおまもりボイスレター聞かせていただきました。ゆうたさんの優しい声と共に。<br><br>
+                            いつしか不安にも追い込まれて押しつぶされそうになって、自分を駄目だしばかりするようになって。自信が持てなくなりました。自分に優しくできなくて。<br><br>
+                            こうなる前は、自分が好きで毎日が楽しくて。このボイスレターを聞いて、毎日モヤモヤ不安に思ってしまう自分をよく頑張ったねって大丈夫だよって褒めてあげたいと思います。<br><br>
+                            自分を大事にできたらいいなと思います。ゆうたさんありがとう。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声5 -->
+                <div class="voice-card">
+                    <div class="customer-name">Mさん</div>
+                    <h3 class="voice-title">「それでもいいんですよね」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            毎日、毎日さまざまなことがおきる日々の中で気持ちも目まぐるしく動きます。<br>
+                            良いこともそうでない事がごちゃ混ぜな日。そんな1日だった今日。<br>
+                            それでもいいんですよね！また明日がやってくるんですから。
+                        </div>
+                        <div class="voice-full">
+                            心のお守りボイスレター。届けてくださりありがとうございます！<br><br>
+                            毎日、毎日さまざまなことがおきる日々の中で気持ちも目まぐるしく動きます。良いこともそうでない事がごちゃ混ぜな日。そんな1日だった今日。それでもいいんですよね！また明日がやってくるんですから。<br><br>
+                            今日の仕事はローテーションでメンバーが変わり、やりやすかったです。からだは朝から重たかったのですが、力抜いて、頑張りすぎず動きました。なので、昨夜のような疲れもなく夜を迎えています。少し昼寝したからでしょうか。<br><br>
+                            明日は休めるので緊張が緩みます✨️これから、食器洗いをしてから、寝る準備をします！明日が今日より少しだけ楽になるかも……おやすみなさい。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声6 -->
+                <div class="voice-card">
+                    <div class="customer-name">Iさん</div>
+                    <h3 class="voice-title">「種まきをしているときです」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            声がとても優しい声ですね！癒やされました。<br>
+                            「今は、種まきをしているときです。大丈夫です。土に根をはっていく時間が必要なんですよ」<br>
+                            と話して頂き、心も軽くなりました。
+                        </div>
+                        <div class="voice-full">
+                            声がとても優しい声ですね！癒やされました。ありがとうございます。<br><br>
+                            「今は、種まきをしているときです。大丈夫です。土に根をはっていく時間が必要なんですよ」と話して頂き、心も軽くなりました。もう少し、頑張ってみます！<br><br>
+                            本当に、心が軽くなりましたので、ありがとうございました。今、何をしても空回りしてる気もしていてここに必要ないのかなとか、思っていたんです…。<br><br>
+                            もう少し、長いスパンで自分を捉えてあげようって思いました。ゆうたさんも、ご無理されませんように！助けられた人がここにいますので。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声7 -->
+                <div class="voice-card">
+                    <div class="customer-name">匿名さん</div>
+                    <h3 class="voice-title">「嵐の只中でも光が見えました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            優しく穏やかな静寂にも似たお声での語りかけ。<br>
+                            こういう場面や体験が人生に無いので尚更ありがたく感じました。<br>
+                            嵐の只中。年単位ですが、いつか過ぎ去る日が来ると思いたいです。
+                        </div>
+                        <div class="voice-full">
+                            優しく穏やかな静寂にも似たお声での語りかけ。こういう場面や体験が人生に無いので尚更ありがたく感じました。<br><br>
+                            嵐の只中。年単位ですが、いつか過ぎ去る日が来ると思いたいです。声のメッセージは直接強く届き残りますね。<br><br>
+                            本当にありがとうございました。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- フッター -->
+        <footer class="footer">
+            <p class="footer-message">あなたの声も、どこかの誰かのおまもりになります</p>
+            <div class="footer-links">
+                <a href="https://mosh.jp/services/279785" class="footer-link" target="_blank" rel="noopener noreferrer">商品ページへ戻る</a>
+                <a href="https://lin.ee/99Xbe5n" class="footer-link" target="_blank" rel="noopener noreferrer">LINEで"心を整える5日間無料ボイス"をお届け中</a>
+                <a href="#" class="footer-link">感想を送る</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function toggleContent(button) {
+            const voiceContent = button.parentElement;
+            const preview = voiceContent.querySelector('.voice-preview');
+            const full = voiceContent.querySelector('.voice-full');
+            
+            if (preview.style.display !== 'none') {
+                preview.style.display = 'none';
+                full.style.display = 'block';
+                button.textContent = '短縮表示';
+            } else {
+                preview.style.display = 'block';
+                full.style.display = 'none';
+                button.textContent = '続きを読む';
+            }
+        }
+
+    </script>
+</body>
+</html>
