@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ことばの贈りもの 〜お客様の声〜</title>
+    <meta name="description" content="「心のおまもりボイス」をお聴きくださった方から届いたご感想を紹介しています。一つひとつの言葉が、また誰かのおまもりになりますように。">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="ことばの贈りもの 〜お客様の声〜">
+    <meta property="og:description" content="「心のおまもりボイス」をお聴きくださった方から届いたご感想を紹介しています。一つひとつの言葉が、また誰かのおまもりになりますように。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="心のおまもりボイス">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card設定 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ことばの贈りもの 〜お客様の声〜">
+    <meta name="twitter:description" content="「心のおまもりボイス」をお聴きくださった方から届いたご感想を紹介しています。一つひとつの言葉が、また誰かのおまもりになりますように。">
+    <meta name="twitter:image" content="">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: 
+                radial-gradient(circle at 15% 85%, rgba(34, 197, 94, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 15%, rgba(22, 163, 74, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(74, 222, 128, 0.04) 0%, transparent 60%),
+                radial-gradient(circle at 25% 25%, rgba(134, 239, 172, 0.05) 0%, transparent 35%),
+                radial-gradient(circle at 75% 75%, rgba(187, 247, 208, 0.07) 0%, transparent 50%),
+                conic-gradient(from 45deg at 30% 70%, rgba(22, 101, 52, 0.03) 0deg, transparent 120deg, rgba(21, 128, 61, 0.02) 240deg, transparent 360deg),
+                linear-gradient(135deg, 
+                    #f7fdf9 0%, 
+                    #f0fdf4 15%, 
+                    #ecfdf5 30%, 
+                    #f0f9f0 45%, 
+                    #f6f8f6 60%, 
+                    #f4f6f4 75%, 
+                    #f9fbf9 90%, 
+                    #fafbfa 100%);
+            color: #1f2937;
+            line-height: 1.8;
+            min-height: 100vh;
+            background-attachment: fixed;
+            background-size: 400px 400px, 350px 350px, 500px 500px, 300px 300px, 450px 450px, 600px 600px, 100% 100%;
+            animation: forestBreeze 25s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        @keyframes forestBreeze {
+            0% { 
+                background-position: 0% 0%, 100% 100%, 50% 50%, 25% 75%, 75% 25%, 0% 100%, 0% 0%;
+            }
+            25% { 
+                background-position: 25% 25%, 75% 75%, 100% 0%, 50% 50%, 0% 100%, 50% 0%, 0% 0%;
+            }
+            50% { 
+                background-position: 50% 50%, 50% 50%, 0% 100%, 75% 25%, 25% 75%, 100% 50%, 0% 0%;
+            }
+            75% { 
+                background-position: 75% 75%, 25% 25%, 50% 50%, 100% 0%, 50% 50%, 25% 100%, 0% 0%;
+            }
+            100% { 
+                background-position: 0% 0%, 100% 100%, 50% 50%, 25% 75%, 75% 25%, 0% 100%, 0% 0%;
+            }
+        }
+
+        .loading-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 
+                0 20px 60px rgba(34, 197, 94, 0.15),
+                0 8px 30px rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(134, 239, 172, 0.3);
+            backdrop-filter: blur(20px);
+            max-width: 500px;
+            margin: 0 20px;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #166534 0%, #22c55e 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #16a34a;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .spinner {
+            border: 3px solid rgba(34, 197, 94, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid #22c55e;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .message {
+            color: #166534;
+            font-size: 1.1rem;
+            margin: 20px 0;
+        }
+
+        .link {
+            color: #22c55e;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .link:hover {
+            color: #16a34a;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <h1 class="title">ことばの贈りもの</h1>
+        <p class="subtitle">〜お客様の声〜</p>
+        <div class="spinner"></div>
+        <p class="message">ページを読み込み中...</p>
+        <p><a href="customer-voices.html" class="link">直接アクセスする場合はこちら</a></p>
+    </div>
+    <script>
+        // Redirect to customer-voices.html
+        setTimeout(() => {
+            window.location.href = 'customer-voices.html';
+        }, 2000);
+    </script>
+</body>
+</html>
