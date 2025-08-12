@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ことばの贈りもの 〜お客様の声〜</title>
+    <meta name="description" content="「心のおまもりボイス」をお聴きくださった方から届いたご感想を紹介しています。一つひとつの言葉が、また誰かのおまもりになりますように。">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: 
+                radial-gradient(circle at 15% 85%, rgba(34, 197, 94, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 15%, rgba(22, 163, 74, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(74, 222, 128, 0.04) 0%, transparent 60%),
+                radial-gradient(circle at 25% 25%, rgba(134, 239, 172, 0.05) 0%, transparent 35%),
+                radial-gradient(circle at 75% 75%, rgba(187, 247, 208, 0.07) 0%, transparent 50%),
+                conic-gradient(from 45deg at 30% 70%, rgba(22, 101, 52, 0.03) 0deg, transparent 120deg, rgba(21, 128, 61, 0.02) 240deg, transparent 360deg),
+                linear-gradient(135deg, 
+                    #f7fdf9 0%, 
+                    #f0fdf4 15%, 
+                    #ecfdf5 30%, 
+                    #f0f9f0 45%, 
+                    #f6f8f6 60%, 
+                    #f4f6f4 75%, 
+                    #f9fbf9 90%, 
+                    #fafbfa 100%);
+            color: #1f2937;
+            line-height: 1.8;
+            min-height: 100vh;
+            background-attachment: fixed;
+            background-size: 400px 400px, 350px 350px, 500px 500px, 300px 300px, 450px 450px, 600px 600px, 100% 100%;
+            animation: forestBreeze 25s ease-in-out infinite;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ヘッダー */
+        .header {
+            text-align: center;
+            padding: 60px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            background: 
+                linear-gradient(135deg, 
+                    #166534 0%, 
+                    #15803d 20%, 
+                    #16a34a 40%, 
+                    #22c55e 60%, 
+                    #4ade80 80%, 
+                    #22c55e 100%);
+            background-size: 300% 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            position: relative;
+            text-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+            animation: 
+                fadeInUp 1s ease-out,
+                forestGradientShift 12s ease-in-out infinite;
+        }
+
+        @keyframes forestGradientShift {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 25%; }
+            50% { background-position: 50% 100%; }
+            75% { background-position: 25% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes forestBreeze {
+            0% { 
+                background-position: 0% 0%, 100% 100%, 50% 50%, 25% 75%, 75% 25%, 0% 100%, 0% 0%;
+            }
+            25% { 
+                background-position: 25% 25%, 75% 75%, 100% 0%, 50% 50%, 0% 100%, 50% 0%, 0% 0%;
+            }
+            50% { 
+                background-position: 50% 50%, 50% 50%, 0% 100%, 75% 25%, 25% 75%, 100% 50%, 0% 0%;
+            }
+            75% { 
+                background-position: 75% 75%, 25% 25%, 50% 50%, 100% 0%, 50% 50%, 25% 100%, 0% 0%;
+            }
+            100% { 
+                background-position: 0% 0%, 100% 100%, 50% 50%, 25% 75%, 75% 25%, 0% 100%, 0% 0%;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #16a34a;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        /* 冒頭メッセージ */
+        .intro-message {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(236, 253, 245, 0.9) 100%);
+            padding: 40px;
+            border-radius: 30px;
+            margin-bottom: 60px;
+            text-align: center;
+            box-shadow: 
+                0 8px 32px rgba(34, 197, 94, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(74, 222, 128, 0.25);
+            position: relative;
+            backdrop-filter: blur(15px);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .intro-message p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #166534;
+            line-height: 2;
+        }
+
+        /* お客様の声セクション */
+        .voices-section {
+            margin-bottom: 60px;
+        }
+
+        .voices-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .voice-card {
+            background: 
+                linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 253, 244, 0.9) 100%);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 
+                0 10px 30px rgba(34, 197, 94, 0.12),
+                0 1px 0 rgba(255, 255, 255, 0.8) inset,
+                0 -1px 0 rgba(74, 222, 128, 0.15) inset;
+            border: 1px solid rgba(134, 239, 172, 0.3);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(15px);
+            overflow: hidden;
+        }
+
+        .voice-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(34, 197, 94, 0.18),
+                0 1px 0 rgba(255, 255, 255, 0.9) inset;
+        }
+
+        .voice-card::before {
+            content: '🌿';
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-size: 1.8rem;
+            opacity: 0.6;
+            filter: drop-shadow(0 2px 4px rgba(34, 197, 94, 0.3));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .customer-name {
+            font-size: 0.9rem;
+            color: #16a34a;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .voice-title {
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, #166534 0%, #22c55e 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .voice-content {
+            font-size: 1rem;
+            color: #166534;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        .voice-preview {
+            display: block;
+        }
+
+        .voice-full {
+            display: none;
+        }
+
+        .read-more-btn {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .read-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.45);
+            background: linear-gradient(135deg, #16a34a, #15803d);
+        }
+
+        /* フッター */
+        .footer {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(236, 253, 245, 0.9) 100%);
+            padding: 50px 40px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 
+                0 10px 30px rgba(34, 197, 94, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(134, 239, 172, 0.3);
+            backdrop-filter: blur(15px);
+            position: relative;
+        }
+
+        .footer-message {
+            font-size: 1.1rem;
+            color: #166534;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 6px 20px rgba(34, 197, 94, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-link:hover {
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.45);
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .voice-card {
+                padding: 25px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+
+        /* アニメーション */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+            }
+            50% { 
+                transform: translateY(-5px) rotate(5deg); 
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1 class="main-title">ことばの贈りもの</h1>
+            <p class="subtitle">〜お客様の声〜</p>
+        </header>
+
+        <!-- 冒頭メッセージ -->
+        <div class="intro-message">
+            <p>
+                このページでは、「心のおまもりボイス」をお申し込みいただき、<br>
+                実際にお聴きくださった方から届いたご感想を紹介しています。<br>
+                一つひとつの言葉が、また誰かのおまもりになりますように。
+            </p>
+        </div>
+
+        <!-- お客様の声セクション -->
+        <section class="voices-section">
+            <div class="voices-grid">
+                <!-- お客様の声1 -->
+                <div class="voice-card">
+                    <div class="customer-name">Mさん</div>
+                    <h3 class="voice-title">「1人じゃないと気づけました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            「大丈夫」という言葉にはいろいろな意味があるってことを再認識しました。<br>
+                            自分の感情を表に出すのが怖かったのですが、ゆうたさんに「大丈夫」と言われると<br>
+                            本当に1人じゃないんだ、私のことを考えてくれる人がいるんだと光が見えた気がしました。
+                        </div>
+                        <div class="voice-full">
+                            ボイスレターありがとうございました。何度も聞いて思ったことをお伝えします。<br><br>
+                            「大丈夫」という言葉にはいろいろな意味があるってことを再認識しました。自分の感情を表に出すのが怖かったのですが、ゆうたさんに「大丈夫」と言われると本当に1人じゃないんだ、私のことを考えてくれる人がいるんだと光が見えた気がしました。<br><br>
+                            弱さを出すのも個性なんだって思えました。一生懸命に生きていることの証と言われてすっと気持ちが軽くなりました。自分が生きていていいんだって。<br><br>
+                            誰かに寄り添ってもらえることってこんなにも嬉しいことなんだなって。自分のペースで自分の気持ちに寄り添っていこうと思えました。<br><br>
+                            支離滅裂になってしまっていますが、思っていることを書き出したら涙が出ました。お願いしてよかったです。ありがとうございます。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声2 -->
+                <div class="voice-card">
+                    <div class="customer-name">Kさん</div>
+                    <h3 class="voice-title">「元気をもらいました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            昨日ボイスメッセージを聞かせていただきました。<br>
+                            とても疲れていたのですが、元気をもらいました。<br>
+                            ありがとうございました。
+                        </div>
+                        <div class="voice-full">
+                            昨日ボイスメッセージを聞かせていただきました。<br><br>
+                            とても疲れていたのですが、元気をもらいました。ありがとうございました。<br><br>
+                            忙しい毎日で自分のことを後回しにしがちですが、優しい声で話しかけてもらえて心が軽くなりました。また辛いときにお聞きしたいと思います。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声3 -->
+                <div class="voice-card">
+                    <div class="customer-name">Tさん</div>
+                    <h3 class="voice-title">「涙が出ました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            メッセージを聞いて涙が出ました。<br>
+                            こんなに優しい言葉をかけてもらったのは久しぶりでした。<br>
+                            本当にありがとうございます。
+                        </div>
+                        <div class="voice-full">
+                            メッセージを聞いて涙が出ました。こんなに優しい言葉をかけてもらったのは久しぶりでした。本当にありがとうございます。<br><br>
+                            最近は人と話す機会も少なく、一人で抱え込んでしまうことが多かったのですが、ゆうたさんの声を聞いて安心できました。<br><br>
+                            自分を大切にすることの大切さを改めて感じました。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声4 -->
+                <div class="voice-card">
+                    <div class="customer-name">Sさん</div>
+                    <h3 class="voice-title">「心が軽くなりました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            ボイスメッセージをいただき、ありがとうございました。<br>
+                            悩んでいたことが少し整理できて、心が軽くなりました。<br>
+                            温かい言葉に救われました。
+                        </div>
+                        <div class="voice-full">
+                            ボイスメッセージをいただき、ありがとうございました。悩んでいたことが少し整理できて、心が軽くなりました。温かい言葉に救われました。<br><br>
+                            一人で悩んでいても答えが見つからなかったのですが、ゆうたさんのアドバイスで新しい視点を得ることができました。<br><br>
+                            また困ったときはお願いしたいと思います。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声5 -->
+                <div class="voice-card">
+                    <div class="customer-name">Aさん</div>
+                    <h3 class="voice-title">「勇気をもらいました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            優しい声で話していただき、勇気をもらいました。<br>
+                            新しいことにチャレンジしてみようと思えるようになりました。<br>
+                            本当にありがとうございました。
+                        </div>
+                        <div class="voice-full">
+                            優しい声で話していただき、勇気をもらいました。新しいことにチャレンジしてみようと思えるようになりました。本当にありがとうございました。<br><br>
+                            失敗を恐れて踏み出せずにいたのですが、ゆうたさんの言葉で背中を押してもらえました。<br><br>
+                            小さな一歩でも前進していこうと思います。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声6 -->
+                <div class="voice-card">
+                    <div class="customer-name">Yさん</div>
+                    <h3 class="voice-title">「安心できました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            不安な気持ちでいっぱいでしたが、メッセージを聞いて安心できました。<br>
+                            一人じゃないんだと感じることができました。<br>
+                            ありがとうございます。
+                        </div>
+                        <div class="voice-full">
+                            不安な気持ちでいっぱいでしたが、メッセージを聞いて安心できました。一人じゃないんだと感じることができました。ありがとうございます。<br><br>
+                            将来への不安で眠れない日が続いていましたが、ゆうたさんの温かい言葉で心が落ち着きました。<br><br>
+                            今を大切に生きていこうと思えました。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声7 -->
+                <div class="voice-card">
+                    <div class="customer-name">Hさん</div>
+                    <h3 class="voice-title">「希望を感じました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            辛い時期でしたが、ボイスメッセージで希望を感じることができました。<br>
+                            明日からまた頑張ろうと思えます。<br>
+                            感謝しています。
+                        </div>
+                        <div class="voice-full">
+                            辛い時期でしたが、ボイスメッセージで希望を感じることができました。明日からまた頑張ろうと思えます。感謝しています。<br><br>
+                            何もかもうまくいかず、諦めそうになっていましたが、ゆうたさんの言葉で立ち直る力をもらいました。<br><br>
+                            困難も乗り越えられそうです。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声8 -->
+                <div class="voice-card">
+                    <div class="customer-name">Nさん</div>
+                    <h3 class="voice-title">「癒されました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            疲れ切っていた心が癒されました。<br>
+                            優しい声に包まれて、久しぶりにリラックスできました。<br>
+                            ありがとうございました。
+                        </div>
+                        <div class="voice-full">
+                            疲れ切っていた心が癒されました。優しい声に包まれて、久しぶりにリラックスできました。ありがとうございました。<br><br>
+                            毎日がストレスの連続でしたが、ゆうたさんの声を聞いて心の緊張がほぐれました。<br><br>
+                            自分を労わる時間も必要だと気づけました。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声9 -->
+                <div class="voice-card">
+                    <div class="customer-name">Rさん</div>
+                    <h3 class="voice-title">「前向きになれました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            落ち込んでいましたが、メッセージのおかげで前向きになれました。<br>
+                            新しい視点をもらえて、問題も違って見えるようになりました。<br>
+                            本当に助かりました。
+                        </div>
+                        <div class="voice-full">
+                            落ち込んでいましたが、メッセージのおかげで前向きになれました。新しい視点をもらえて、問題も違って見えるようになりました。本当に助かりました。<br><br>
+                            ネガティブな思考から抜け出せずにいましたが、ゆうたさんの言葉で考え方が変わりました。<br><br>
+                            困難も成長の機会だと思えるようになりました。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声10 -->
+                <div class="voice-card">
+                    <div class="customer-name">Oさん</div>
+                    <h3 class="voice-title">「温かい気持ちになりました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            心が冷たくなっていたように感じていましたが、<br>
+                            ボイスメッセージで温かい気持ちになりました。<br>
+                            人の優しさに触れることができて嬉しかったです。
+                        </div>
+                        <div class="voice-full">
+                            心が冷たくなっていたように感じていましたが、ボイスメッセージで温かい気持ちになりました。人の優しさに触れることができて嬉しかったです。<br><br>
+                            忙しい日々で人間関係も疎遠になりがちでしたが、ゆうたさんの温かい言葉で心が満たされました。<br><br>
+                            もっと人とのつながりを大切にしたいと思いました。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声11 -->
+                <div class="voice-card">
+                    <div class="customer-name">Iさん</div>
+                    <h3 class="voice-title">「心の支えになりました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            つらい状況の中で、ボイスメッセージが心の支えになりました。<br>
+                            一人で抱え込まなくてもいいんだと気づけました。<br>
+                            感謝の気持ちでいっぱいです。
+                        </div>
+                        <div class="voice-full">
+                            つらい状況の中で、ボイスメッセージが心の支えになりました。一人で抱え込まなくてもいいんだと気づけました。感謝の気持ちでいっぱいです。<br><br>
+                            問題解決の糸口は見つからなくても、心の負担が軽くなったことで冷静に考えられるようになりました。<br><br>
+                            支えてくれる人がいることの大切さを実感しました。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声12 -->
+                <div class="voice-card">
+                    <div class="customer-name">Eさん</div>
+                    <h3 class="voice-title">「自信を取り戻せました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            自信を失っていましたが、メッセージを聞いて自分を認められるようになりました。<br>
+                            ありのままの自分でも大丈夫だと思えました。<br>
+                            ありがとうございます。
+                        </div>
+                        <div class="voice-full">
+                            自信を失っていましたが、メッセージを聞いて自分を認められるようになりました。ありのままの自分でも大丈夫だと思えました。ありがとうございます。<br><br>
+                            他人と比べて落ち込むことが多かったのですが、ゆうたさんの言葉で自分の価値に気づくことができました。<br><br>
+                            自分らしく生きていこうと思えるようになりました。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声13 -->
+                <div class="voice-card">
+                    <div class="customer-name">Uさん</div>
+                    <h3 class="voice-title">「心が安らぎました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            忙しい毎日で心がざわついていましたが、<br>
+                            ボイスメッセージを聞いて心が安らぎました。<br>
+                            深呼吸ができるようになった気がします。
+                        </div>
+                        <div class="voice-full">
+                            忙しい毎日で心がざわついていましたが、ボイスメッセージを聞いて心が安らぎました。深呼吸ができるようになった気がします。<br><br>
+                            いつも何かに追われているような感覚でしたが、ゆうたさんの穏やかな声で心が落ち着きました。<br><br>
+                            時には立ち止まることも大切だと気づけました。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+
+                <!-- お客様の声14 -->
+                <div class="voice-card">
+                    <div class="customer-name">Dさん</div>
+                    <h3 class="voice-title">「新しいスタートを切れました」</h3>
+                    <div class="voice-content">
+                        <div class="voice-preview">
+                            人生の転機で迷っていましたが、メッセージのおかげで新しいスタートを切ることができました。<br>
+                            背中を押してもらえて本当に良かったです。<br>
+                            心から感謝しています。
+                        </div>
+                        <div class="voice-full">
+                            人生の転機で迷っていましたが、メッセージのおかげで新しいスタートを切ることができました。背中を押してもらえて本当に良かったです。心から感謝しています。<br><br>
+                            変化を恐れて現状に留まろうとしていましたが、ゆうたさんの励ましで一歩踏み出す勇気をもらいました。<br><br>
+                            新しい環境で頑張っていきたいと思います。
+                        </div>
+                        <span class="read-more-btn" onclick="toggleContent(this)">続きを読む</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <p class="footer-message">あなたの声も、どこかの誰かのおまもりになります</p>
+            <div class="footer-links">
+                <a href="https://mosh.jp/services/279785" class="footer-link" target="_blank" rel="noopener noreferrer">商品ページへ戻る</a>
+                <a href="https://lin.ee/99Xbe5n" class="footer-link" target="_blank" rel="noopener noreferrer">LINE登録</a>
+                <a href="#" class="footer-link">感想を送る</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function toggleContent(button) {
+            const voiceContent = button.parentElement;
+            const preview = voiceContent.querySelector('.voice-preview');
+            const full = voiceContent.querySelector('.voice-full');
+            
+            if (preview.style.display !== 'none') {
+                preview.style.display = 'none';
+                full.style.display = 'block';
+                button.textContent = '短縮表示';
+            } else {
+                preview.style.display = 'block';
+                full.style.display = 'none';
+                button.textContent = '続きを読む';
+            }
+        }
+    </script>
+</body>
+</html>

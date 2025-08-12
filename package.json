@@ -1,0 +1,23 @@
+{
+  "name": "customer-testimonials",
+  "version": "1.0.0",
+  "description": "静的HTMLサイト - お客様の声を紹介するページ",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Nothing to build - static HTML site'",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "html",
+    "css",
+    "testimonials",
+    "static-site"
+  ],
+  "author": "Yamane",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
